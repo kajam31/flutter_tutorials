@@ -5,7 +5,7 @@ void main() => runApp(MaterialApp(home: Home()));
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
-  @override
+  @override // will use the buildfunction it is refering to (underneath) to override the inherited build function
   // ignore: dead_code
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          'this a test!',
+          'this is a test!',
           style: TextStyle(
             fontSize: 40.0,
             fontWeight: FontWeight.bold,
