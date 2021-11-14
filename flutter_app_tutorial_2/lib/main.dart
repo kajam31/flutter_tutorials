@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(home: Home()));
@@ -10,20 +12,16 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("my first app"),
+        title: Text("my second app"),
         centerTitle: true,
         backgroundColor: Colors.green[800],
       ),
       body: Center(
-        child: Text(
-          'this is a test!',
-          style: TextStyle(
-            fontSize: 40.0,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2.0,
-            color: Colors.purple[800],
-            fontFamily: 'Estonia',
-          ),
+        child: Image(
+/*           image: NetworkImage(
+              "https://cdna.artstation.com/p/assets/images/images/005/533/550/large/vincent-voet-galaxy-s6-edge-background1.jpg?1491765803"
+              ), */
+          image: AssetImage('assets/space_world.jpg'),
         ),
       ),
       floatingActionButton: FloatingActionButton(
