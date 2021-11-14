@@ -73,11 +73,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-fonts:
-  - family: Shalimar
-    fonts:
-      - asset: fonts/Shalimar-Regular.ttf
+  fonts:
+    - family: Estonia
+      fonts:
+        - asset: fonts/Estonia-Regular.ttf
 
+  
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-
