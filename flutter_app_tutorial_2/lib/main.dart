@@ -16,20 +16,61 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.green[800],
       ),
-      body: 
-      //  ############## used when you only need padding for a widget nothing else
-      // Padding(
-      //   padding: EdgeInsets.all(30.0),
-      //   child: Text("test"),
-      
-      // ################ this is a container, this can be used when you want to layout content, like a div in html
-      // Container(
-      //   margin: EdgeInsets.all(30.0),
-      //   padding: EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 40.0),
-      //   // padding: EdgeInsets.all(20.0),
-      //   // padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-      //   color: Colors.grey[400],
-      //   child: Text("hello"),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        
+        children: [
+          Container(
+            padding: EdgeInsets.all(20.0),
+            color: Colors.cyan,
+            child: Text("one"),
+          ),
+          Container(
+            padding: EdgeInsets.all(40.0),
+            color: Colors.deepOrange,
+            child: Text("two"),
+          ),
+          Container(
+            padding: EdgeInsets.all(30.0),
+            color: Colors.deepPurple,
+            child: Text("tree"),
+          ),
+        ],
+
+        //  ################# rows can be used to horizontaly align different widgets
+        // Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //   crossAxisAlignment: CrossAxisAlignment.start,
+        //   children: [
+        //     Text("hello world"),
+        //     TextButton(
+        //       onPressed: () {},
+        //       child: Text("this is a test"),
+        //       style: TextButton.styleFrom(
+        //         primary: Colors.black,
+        //         backgroundColor: Colors.deepOrange,
+        //       ),
+        //     ),
+        //     Container(
+        //         color: Colors.cyan,
+        //         padding: EdgeInsets.all(30.0),
+        //         child: Text("inside a container"))
+        //   ],
+
+        //  ############## used when you only need padding for a widget nothing else
+        // Padding(
+        //   padding: EdgeInsets.all(30.0),
+        //   child: Text("test"),
+
+        // ################ this is a container, this can be used when you want to layout content, like a div in html
+        // Container(
+        //   margin: EdgeInsets.all(30.0),
+        //   padding: EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 40.0),
+        //   // padding: EdgeInsets.all(20.0),
+        //   // padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+        //   color: Colors.grey[400],
+        //   child: Text("hello"),
 
         // ############# this is an icon that can be pressed just like a button
         //  Center(
