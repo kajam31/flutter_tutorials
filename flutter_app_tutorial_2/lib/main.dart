@@ -10,6 +10,7 @@ class Home extends StatelessWidget {
   @override // will use the buildfunction it is refering to (underneath) to override the inherited build function
   // ignore: dead_code
   Widget build(BuildContext context) {
+    var conWidth = MediaQuery.of(context).size.width / 9.5;
     return Scaffold(
       appBar: AppBar(
         title: Text("my second app"),
@@ -17,19 +18,67 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.green[800],
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        
+        mainAxisAlignment: MainAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.start,
+
         children: [
-          Container(
-            padding: EdgeInsets.all(20.0),
-            color: Colors.cyan,
-            child: Text("one"),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                padding: EdgeInsets.fromLTRB(conWidth, 10.0, conWidth, 10.0),
+                color: Colors.grey[850],
+                child: Text(
+                  "home",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(conWidth, 10.0, conWidth, 10.0),
+                color: Colors.grey[850],
+                child: Text(
+                  "foto's",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(conWidth, 10.0, conWidth, 10.0),
+                color: Colors.grey[850],
+                child: Text(
+                  "tasks",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
           ),
-          Container(
-            padding: EdgeInsets.all(40.0),
-            color: Colors.deepOrange,
-            child: Text("two"),
+          Center(
+            child: Container(
+              padding: EdgeInsets.all(20.0),
+              color: Colors.cyan,
+              child: Text("one"),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              padding: EdgeInsets.all(40.0),
+              color: Colors.deepOrange,
+              child: Text("two"),
+            ),
           ),
           Container(
             padding: EdgeInsets.all(30.0),

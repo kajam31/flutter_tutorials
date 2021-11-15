@@ -6,7 +6,9 @@ void main() {
 }
  */
 
-void main(){
+void main() {
   print("hello world");
+  num width = 30.0;
+  print(width);
 }
 
