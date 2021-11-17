@@ -4,8 +4,18 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(home: NinjaCard()));
 
-class NinjaCard extends StatelessWidget {
+class NinjaCard extends StatefulWidget {
+  // a StatelessWidget is a widget that doesn't realy change when it is finished,
+  //it can also not handle user input like clicking or other kinds of input
   const NinjaCard({Key? key}) : super(key: key);
+
+  @override
+  State<NinjaCard> createState() => _NinjaCardState();
+}
+
+class _NinjaCardState extends State<NinjaCard> {
+  // variables
+  int currentLevel = 0;
 
   @override // will use the buildfunction it is refering to (underneath) to override the inherited build function
   // ignore: dead_code
@@ -18,6 +28,15 @@ class NinjaCard extends StatelessWidget {
         backgroundColor: Colors.grey[850],
         elevation: 0.0,
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              currentLevel += 1;
+            }); // if you want to change the data in a statefull widget you have to add setState((){ [code]})
+                // otherwise it won't rebuild the app and no changes will be shown
+          },
+          child: Icon(Icons.add),
+          backgroundColor: Colors.greenAccent),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
         child: Column(
@@ -66,7 +85,7 @@ class NinjaCard extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              "level: 8",
+              "level: $currentLevel",
               style: TextStyle(
                 color: Colors.amberAccent,
                 letterSpacing: 2.0,
