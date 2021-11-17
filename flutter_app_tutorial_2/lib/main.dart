@@ -10,7 +10,9 @@ class Home extends StatelessWidget {
   @override // will use the buildfunction it is refering to (underneath) to override the inherited build function
   // ignore: dead_code
   Widget build(BuildContext context) {
-    var conWidth = MediaQuery.of(context).size.width / 9.5;
+    var conWidthPad = 40.0;
+    var conWidth = MediaQuery.of(context).size.width / 3;
+    var conHeigth = 12.0;
     return Scaffold(
       appBar: AppBar(
         title: Text("my second app"),
@@ -28,8 +30,10 @@ class Home extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(conWidth, 10.0, conWidth, 10.0),
+                padding: EdgeInsets.fromLTRB(
+                    conWidthPad, conHeigth, conWidthPad, conHeigth),
                 color: Colors.grey[850],
+                width: conWidth,
                 child: Text(
                   "home",
                   style: TextStyle(
@@ -40,8 +44,10 @@ class Home extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(conWidth, 10.0, conWidth, 10.0),
+                padding: EdgeInsets.fromLTRB(
+                    conWidthPad, conHeigth, conWidthPad, conHeigth),
                 color: Colors.grey[850],
+                width: conWidth,
                 child: Text(
                   "foto's",
                   style: TextStyle(
@@ -52,8 +58,10 @@ class Home extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(conWidth, 10.0, conWidth, 10.0),
+                padding: EdgeInsets.fromLTRB(
+                    conWidthPad, conHeigth, conWidthPad, conHeigth),
                 color: Colors.grey[850],
+                width: conWidth,
                 child: Text(
                   "tasks",
                   style: TextStyle(
@@ -61,6 +69,36 @@ class Home extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(child: Image.asset("assets/space_world.jpg")),
+              Expanded(
+                flex: 3,
+                child: Container(
+                  padding: EdgeInsets.all(30.0),
+                  color: Colors.cyan,
+                  child: Center(child: Text("1")),
+                ),
+              ),
+              Expanded(
+                flex: 2,
+                child: Container(
+                  padding: EdgeInsets.all(30.0),
+                  color: Colors.pinkAccent,
+                  child: Text("2"),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  padding: EdgeInsets.all(30.0),
+                  color: Colors.amber,
+                  child: Text("3"),
                 ),
               ),
             ],
