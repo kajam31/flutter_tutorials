@@ -33,7 +33,7 @@ class _NinjaCardState extends State<NinjaCard> {
             setState(() {
               currentLevel += 1;
             }); // if you want to change the data in a statefull widget you have to add setState((){ [code]})
-                // otherwise it won't rebuild the app and no changes will be shown
+            // otherwise it won't rebuild the app and no changes will be shown
           },
           child: Icon(Icons.add),
           backgroundColor: Colors.greenAccent),
