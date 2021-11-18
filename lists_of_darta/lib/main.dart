@@ -68,11 +68,11 @@ class _QuoteListState extends State<QuoteList> {
               child: Text(
                 quote.text,
                 style: TextStyle(
-                  color: Colors.deepOrange[600],
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.0,
-                  fontSize: 15.0,
-                ),
+                    color: Colors.deepOrange[600],
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.0,
+                    fontSize: 25.0,
+                    fontFamily: "Estonia"),
               ),
             ),
             SizedBox(height: 6.0),
