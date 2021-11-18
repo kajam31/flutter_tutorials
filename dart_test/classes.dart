@@ -44,10 +44,7 @@ class User {
     this.age = age;
   }
 
-  void login() {
-    print("user logged in!");
-  }
-}
+
 
 class SuperUser extends User {
   SuperUser(String username, int age) : super(username, age);
