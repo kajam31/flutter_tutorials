@@ -32,63 +32,6 @@ class _QuoteListState extends State<QuoteList> {
         author: "Elon Musk",
         text: "Take 6 months for yourself to change the rest of yourself"),
   ];
-  Widget quoteTemplate(cardQuote) {
-    return Card(
-      margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
-      child: Column(
-        children: <Widget>[
-          Text(
-            cardQuote.text,
-            style: TextStyle(fontSize: 18.0, color: Colors.grey[600]),
-          ),
-          SizedBox(height: 6.0),
-          Text(
-            cardQuote.author,
-            style: TextStyle(
-              color: Colors.grey[400],
-              fontSize: 16.0,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget personalTemplate(quote) {
-    return Center(
-      child: (Container(
-        padding: EdgeInsets.all(20.0),
-        color: Colors.indigoAccent[700],
-        width: 350.0,
-        margin: EdgeInsets.all(10.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Center(
-              child: Text(
-                quote.text,
-                style: TextStyle(
-                    color: Colors.deepOrange[600],
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.0,
-                    fontSize: 25.0,
-                    fontFamily: "Estonia"),
-              ),
-            ),
-            SizedBox(height: 6.0),
-            Text(
-              " - ${quote.author}",
-              style: TextStyle(
-                color: Colors.grey[200],
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1.0,
-              ),
-            ),
-          ],
-        ),
-      )),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -101,13 +44,60 @@ class _QuoteListState extends State<QuoteList> {
       ),
       body: Column(children: [
         Column(
-          children: quotes.map((quote) => personalTemplate(quote)).toList(),
+          children: quotes
+              .map((quote) => personalTemplateBuild(buildQuote: quote))
+              .toList(),
         ),
         Column(
-          children:
-              cardQuotes.map((cardQuote) => quoteTemplate(cardQuote)).toList(),
+          children: cardQuotes
+              .map((cardQuote) => QuoteCard(buildQuote: cardQuote))
+              .toList(),
         )
       ]),
     );
   }
 }
+
+class personalTemplateBuild extends StatelessWidget {
+  final Quote buildQuote;
+  personalTemplateBuild({required this.buildQuote});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: (Container(
+        padding: EdgeInsets.all(20.0),
+        color: Colors.indigoAccent[700],
+        width: 370.0,
+        margin: EdgeInsets.all(10.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Center(
+              child: Text(
+                buildQuote.text,
+                style: TextStyle(
+                    color: Colors.deepOrange[600],
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.0,
+                    fontSize: 27.0,
+                    fontFamily: "Estonia"),
+              ),
+            ),
+            SizedBox(height: 6.0),
+            Text(
+              " - ${buildQuote.author}",
+              style: TextStyle(
+                color: Colors.grey[200],
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1.0,
+              ),
+            ),
+          ],
+        ),
+      )),
+    );
+  }
+}
+
+
