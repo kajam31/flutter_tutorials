@@ -52,7 +52,13 @@ class _QuoteListState extends State<QuoteList> {
         ),
         Column(
           children: cardQuotes
-              .map((cardQuote) => QuoteCard(buildQuote: cardQuote))
+              .map((cardQuote) => QuoteCard(
+                  buildQuote: cardQuote,
+                  delete: () {
+                    setState(() {
+                      cardQuotes.remove(cardQuote);
+                    });
+                  }))
               .toList(),
         )
       ]),
