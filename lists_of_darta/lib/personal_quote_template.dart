@@ -23,11 +23,11 @@ class personalTemplateBuild extends StatelessWidget {
                     color: Colors.deepOrange[600],
                     fontWeight: FontWeight.bold,
                     letterSpacing: 1.0,
-                    fontSize: 27.0,
+                    fontSize: 20.0,
                     fontFamily: "Estonia"),
               ),
             ),
-            SizedBox(height: 6.0),
+            SizedBox(height: 1.0),
             Text(
               " - ${buildQuote.author}",
               style: TextStyle(

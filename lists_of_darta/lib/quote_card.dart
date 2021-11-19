@@ -17,9 +17,9 @@ class QuoteCard extends StatelessWidget {
           children: <Widget>[
             Text(
               buildQuote.text,
-              style: TextStyle(fontSize: 18.0, color: Colors.grey[600]),
+              style: TextStyle(fontSize: 17.0, color: Colors.grey[600]),
             ),
-            SizedBox(height: 6.0),
+            SizedBox(height: 1.0),
             Text(
               buildQuote.author,
               style: TextStyle(
