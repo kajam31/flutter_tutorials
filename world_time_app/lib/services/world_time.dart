@@ -1,5 +1,6 @@
 import "package:http/http.dart";
 import "dart:convert";
+import "package:intl/intl.dart";
 
 class WorldTime {
   late String location; // location name for the ui
@@ -9,7 +10,7 @@ class WorldTime {
 
   WorldTime({required this.location, required this.flag, required this.url});
 
-  Future<void> gettime() async {
+  Future<void> getTime() async {
     try {
       // make the request
       Response respose =
@@ -29,7 +30,7 @@ class WorldTime {
       // print(now);
 
       // set the time property
-      time = now.toString();
+      time = DateFormat.jm().format(now);
     } catch (e) {
       time = "there was an error";
       print("caught error: $e");
