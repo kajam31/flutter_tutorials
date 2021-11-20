@@ -7,6 +7,7 @@ class WorldTime {
   late String time; // time in that location
   late String flag; // url to an asset flag icon
   late String url; // the part that changes when you make a new instance / place
+  late bool isDaytime; // true or false if daytime or not
 
   WorldTime({required this.location, required this.flag, required this.url});
 
@@ -30,7 +31,11 @@ class WorldTime {
       // print(now);
 
       // set the time property
-      time = DateFormat.Hm().format(now);// if you want to have it in AM / PM style, use jm instad of Hm
+      isDaytime = now.hour > 6 && now.hour < 20
+          ? true
+          : false; // [condition ?]=if condition is met => [effect] [:] [effect] => effect after : => when condition is not met
+      time = DateFormat.Hm().format(
+          now); // if you want to have it in AM / PM style, use jm instad of Hm
     } catch (e) {
       time = "there was an error";
       print("caught error: $e");
