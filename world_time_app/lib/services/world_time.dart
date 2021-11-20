@@ -31,7 +31,7 @@ class WorldTime {
       // print(now);
 
       // set the time property
-      isDaytime = now.hour > 6 && now.hour < 20
+      isDaytime = now.hour >= 6 && now.hour < 20
           ? true
           : false; // [condition ?]=if condition is met => [effect] [:] [effect] => effect after : => when condition is not met
       time = DateFormat.Hm().format(
