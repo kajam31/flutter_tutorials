@@ -20,7 +20,7 @@ class _LoadingState extends State<Loading> {
     WorldTime instance = WorldTime(
         location: "Berlin", flag: "germany.png", url: "Europe/Berlin");
     await instance.getTime(); // there has to be an await in front of this because the code undeneath needs the value that we are getting here
-    Navigator.pushNamed(context, "/home"); // if you are running this, you ar pushing the home route ontop of the other page
+    // Navigator.pushNamed(context, "/home"); // if you are running this, you ar pushing the home route ontop of the other page
     Navigator.pushReplacementNamed(context, "/home", arguments: {
       "location": instance.location, 
       "flag": instance.flag,

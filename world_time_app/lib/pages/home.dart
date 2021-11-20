@@ -19,6 +19,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+
     data = ModalRoute.of(context)!.settings.arguments as Map;
     print(data);
     return Scaffold(
@@ -39,7 +40,7 @@ class _HomeState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                data["location"]!,
+                data["location"],
                 style: TextStyle(
                   fontSize: 28.0,
                   letterSpacing: 2.0,
@@ -49,7 +50,7 @@ class _HomeState extends State<Home> {
           ),
           SizedBox(height: 20.0),
           Text(
-            data["time"]!,
+            data["time"],
             style: TextStyle(fontSize: 66.0),
           )
         ],

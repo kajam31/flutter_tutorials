@@ -30,7 +30,7 @@ class WorldTime {
       // print(now);
 
       // set the time property
-      time = DateFormat.jm().format(now);
+      time = DateFormat.Hm().format(now);// if you want to have it in AM / PM style, use jm instad of Hm
     } catch (e) {
       time = "there was an error";
       print("caught error: $e");
