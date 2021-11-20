@@ -24,7 +24,10 @@ class _HomeState extends State<Home> {
 
     // set background
     String bgImage = data["isDaytime"] ? "day.png" : "night.png";
-    Color bgColor = data["isDaytime"] ? Colors.blue : Color.fromARGB(255,40 , 39, 97);
+    Color bgColor =
+        data["isDaytime"] ? Colors.blue : Color.fromARGB(255, 40, 39, 97);
+    Color txColor = data["isDaytime"] ? Colors.black : Colors.white;
+    
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -44,8 +47,16 @@ class _HomeState extends State<Home> {
                   onPressed: () {
                     Navigator.pushNamed(context, "/location");
                   },
-                  icon: Icon(Icons.edit_location),
-                  label: Text("edit location"),
+                  icon: Icon(
+                    Icons.edit_location,
+                    color: txColor,
+                  ),
+                  label: Text(
+                    "edit location",
+                    style: TextStyle(
+                      color: txColor,
+                    ),
+                  ),
                 ),
                 SizedBox(height: 20.0),
                 Row(
@@ -56,6 +67,7 @@ class _HomeState extends State<Home> {
                       style: TextStyle(
                         fontSize: 28.0,
                         letterSpacing: 2.0,
+                        color: txColor,
                       ),
                     ),
                   ],
@@ -63,8 +75,11 @@ class _HomeState extends State<Home> {
                 SizedBox(height: 20.0),
                 Text(
                   data["time"],
-                  style: TextStyle(fontSize: 66.0),
-                )
+                  style: TextStyle(
+                    fontSize: 66.0,
+                    color: txColor,
+                  ),
+                ),
               ],
             ),
           ),
