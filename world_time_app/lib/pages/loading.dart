@@ -16,16 +16,20 @@ class _LoadingState extends State<Loading> {
   void gettime() async {
     // make the request
     Response respose =
-        await get(Uri.http("worldtimeapi.org", "/api/timezone/Europe/London"));
+        await get(Uri.http("worldtimeapi.org", "api/timezone/Europe/Brussels"));
     Map data = jsonDecode(respose.body);
     // print(data);
     // get properties from data
 
     String datetime = data["datetime"];
-    String offset = data["utc_offset"];
+    String offset = data["utc_offset"].substring(1, 3);
 
-    print(datetime);
-    print(offset);
+    // print(datetime);
+    // print(offset);
+    // create a datetime object
+    DateTime now = DateTime.parse(datetime);
+    now = now.add(Duration(hours: int.parse(offset)));
+    print(now);
   }
 
   @override
