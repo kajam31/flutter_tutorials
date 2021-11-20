@@ -26,7 +26,8 @@ class _LoadingState extends State<Loading> {
     Navigator.pushReplacementNamed(context, "/home", arguments: {
       "location": instance.location,
       "flag": instance.flag,
-      "time": instance.time
+      "time": instance.time,
+      "isDaytime": instance.isDaytime,
     }); 
     // this will replace the loading page with the home page and pass trought a map of named parameters (this makes it possible to acces the parameters in the new route)
     // print(instance.time);
