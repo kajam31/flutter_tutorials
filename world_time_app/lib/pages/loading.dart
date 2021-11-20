@@ -22,7 +22,11 @@ class _LoadingState extends State<Loading> {
     await instance
         .gettime(); // there has to be an await in front of this because the code undeneath needs the value that we are getting here
     Navigator.pushNamed(context, "/home"); // if you are running this, you ar pushing the home route ontop of the other page
-    Navigator.pushReplacementNamed(context, "/home");  // this will replace the loading page with the home page
+    Navigator.pushReplacementNamed(context, "/home", arguments: {
+      "location": instance.location, 
+      "flag": instance.flag,
+      "time": instance.time,
+    });  // this will replace the loading page with the home page and pass trought a map of named parameters (this makes it possible to acces the parameters in the new route)
     // print(instance.time);
     // setState(() {
     //   time = instance.time;
