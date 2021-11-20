@@ -21,10 +21,12 @@ class _LoadingState extends State<Loading> {
         location: "Berlin", flag: "germany.png", url: "Europe/Berlin");
     await instance
         .gettime(); // there has to be an await in front of this because the code undeneath needs the value that we are getting here
-    print(instance.time);
-    setState(() {
-      time = instance.time;
-    });
+    Navigator.pushNamed(context, "/home"); // if you are running this, you ar pushing the home route ontop of the other page
+    Navigator.pushReplacementNamed(context, "/home");  // this will replace the loading page with the home page
+    // print(instance.time);
+    // setState(() {
+    //   time = instance.time;
+    // });
   }
 
   @override
@@ -38,7 +40,7 @@ class _LoadingState extends State<Loading> {
     return Scaffold(
         body: Padding(
       padding: const EdgeInsets.all(50.0),
-      child: Text(time),
+      child: Text("loading"),
     ));
   }
 }
